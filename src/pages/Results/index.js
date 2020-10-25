@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, Container, Typography, Grid, TextField, Button } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import queryString from 'query-string';
 
 import FruitDetails from '../../components/FruitDetails'
@@ -13,6 +13,7 @@ export default ({ location }) => {
 
     useEffect(() => {
         const { fruitName } = queryString.parse(location.search);
+
         if (fruitName && !fruits)
             dispatch(searchFruit({ fruitName }));
     })
@@ -26,6 +27,5 @@ export default ({ location }) => {
         <Container>
             {renderFruits()}
         </Container>
-
     )
 }

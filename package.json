@@ -20,7 +20,9 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"react-scripts start\" \"json-server --watch fruits.json --port 3010\"",
+    "start": "react-scripts start",
+    "start:dev": "concurrently --kill-others \"react-scripts start\" \"json-server --watch fruits.json --port 3010\"",
+    "start:api": "json-server --watch fruits.json --port 3010",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
