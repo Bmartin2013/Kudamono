@@ -5,9 +5,12 @@ import PropTypes from 'prop-types';
 
 import Home from './pages/Home';
 import Results from './pages/Results';
+import AppBar from './components/AppBar';
+
 
 const App = ({ store }) => (
 	<Provider store={store}>
+		<AppBar appName="Kudamono v0.1"></AppBar>
 		<Router>
 			<div>
 				<Route exact path="/" component={Home} />

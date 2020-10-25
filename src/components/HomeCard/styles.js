@@ -6,28 +6,18 @@ const centeredStyleObj = {
     justifyContent: 'center'
 }
 
-const topStyleObj = {
-    display: 'flex',
-    alignItems: 'top',
-    justifyContent: 'top'
-}
-
 const largeIcon = {
     fontSize: '2.3rem',
     padding: '0 5px'
 }
 
 export default makeStyles({
-    container: {
-        height: '100vh',
-        flexDirection: 'column',
-        ...topStyleObj
-    },
     cardContainer: {
         flexDirection: 'column',
         width: '400',
         height: '200',
         padding: '2em',
+        marginTop: '1em',
         ...centeredStyleObj
     },
     titleGridContainer: {
@@ -45,8 +35,5 @@ export default makeStyles({
     },
     fruitIcon: {
         ...largeIcon
-    },
-    tableCell: {
-        padding:'.5em'
     }
 });

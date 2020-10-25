@@ -3,11 +3,9 @@ import { capitalize } from '../../utils'
 import { Container } from '@material-ui/core';
 
 import HomeCard from '../../components/HomeCard'
-import styles from '../../styles';
 
 export default ({ history }) => {
 	const [searchText, setSearchText] = useState('');
-	const classes = styles();
 
 	const handleSearchTextChange = event => {
 		setSearchText(event.target.value);
@@ -22,7 +20,7 @@ export default ({ history }) => {
 	}
 
 	return (
-		<Container className={classes.container}>
+		<Container>
 			<HomeCard
 				title="Choose your fruit!"
 				handleSearchTextChange={handleSearchTextChange}

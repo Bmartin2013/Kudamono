@@ -28,7 +28,6 @@ const FruitDetails = ({ name, family, nutritions }) => {
     }
 
     return (
-        <Container className={classes.container}>
             <Grid container>
                 <Typography variant="h5" className={classes.title}>{name}</Typography>
                 <TableContainer component={Paper}>
@@ -48,7 +47,6 @@ const FruitDetails = ({ name, family, nutritions }) => {
                     </Table>
                 </TableContainer>
             </Grid>
-        </Container>
     )
 }
 
