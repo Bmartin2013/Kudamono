@@ -21,15 +21,8 @@ export default makeStyles({
     title: {
         margin: '10px 0'
     },
-    textField: {
-        width: '90%'
-    },
-    buttonsContainer: {
-        marginTop: '.5rem',
-        marginRight: '.5rem',
-        "& Button": {
-            margin: '10px'
-        }
+    link: {
+        margin: '15px 5px',
     }
 
 });

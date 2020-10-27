@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Typography, Toolbar, IconButton, } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import AppleIcon from '@material-ui/icons/Apple';
 
 export default ({ appName }) => {
 
@@ -8,7 +8,7 @@ export default ({ appName }) => {
         <AppBar position="static">
             <Toolbar>
                 <IconButton edge="start" color="inherit" aria-label="menu">
-                    <MenuIcon />
+                    <AppleIcon />
                 </IconButton>
                 <Typography variant="h6" >
                     {appName}

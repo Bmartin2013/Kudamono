@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Typography, Grid, TextField, Button } from '@material-ui/core';
-import AppleIcon from '@material-ui/icons/Apple';
 import styles from './styles';
 
 export default ({ title,
@@ -16,12 +15,10 @@ export default ({ title,
         <Card className={classes.cardContainer}>
             <Grid container className={classes.titleGridContainer}>
                 <Grid>
-                    <Typography variant="h4">{title}</Typography>
-                </Grid>
-                <Grid>
-                    <AppleIcon className={classes.fruitIcon} />
+                    <Typography variant="h4" className={classes.title} >{title}</Typography>
                 </Grid>
                 <TextField
+                    color="secondary"
                     value={searchText}
                     className={classes.textField}
                     placeholder={inputPlaceholder}
