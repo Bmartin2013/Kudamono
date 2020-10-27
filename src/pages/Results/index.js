@@ -11,13 +11,11 @@ import { fruitResults } from '../../redux/selectors';
 export default ({ location, history }) => {
     const dispatch = useDispatch();
     const fruits = useSelector(state => fruitResults(state))
+    const { fruitName } = queryString.parse(location.search);
 
     useEffect(() => {
-        const { fruitName } = queryString.parse(location.search);
-
-        if (!fruits || fruits[0].name !== fruitName)
-            dispatch(searchFruit({ fruitName }));
-    })
+        dispatch(searchFruit({ fruitName }));
+    }, [fruitName])
 
     const renderFruits = () => {
         if (fruits)
