@@ -15,7 +15,7 @@ export default ({ location, history }) => {
     useEffect(() => {
         const { fruitName } = queryString.parse(location.search);
 
-        if (fruitName && !fruits)
+        if (!fruits || fruits[0].name !== fruitName)
             dispatch(searchFruit({ fruitName }));
     })
 
@@ -25,13 +25,13 @@ export default ({ location, history }) => {
     }
 
     const renderError = () => {
-            return <FruitError history={history} title="Fruit not found! Try searching another one" 
+        return <FruitError history={history} title="Fruit not found! Try searching another one"
             description="please try again searching another fruit"></FruitError>
     }
 
     return (
         <Container>
-            {fruits ? renderFruits() : renderError() }
+            {fruits ? renderFruits() : renderError()}
         </Container>
     )
 }
