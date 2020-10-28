@@ -4,7 +4,6 @@ import { Container } from '@material-ui/core';
 import queryString from 'query-string';
 
 import FruitDetails from '../../components/FruitDetails'
-import FruitError from '../../components/FruitError'
 import searchFruit from '../../redux/actions/search'
 import { fruitResults } from '../../redux/selectors';
 
@@ -22,14 +21,9 @@ export default ({ location, history }) => {
             return fruits.map((value, index) => <FruitDetails history={history} key={index}{...value}></FruitDetails>)
     }
 
-    const renderError = () => {
-        return <FruitError history={history} title="Fruit not found! Try searching another one"
-            description="please try again searching another fruit"></FruitError>
-    }
-
     return (
         <Container>
-            {fruits ? renderFruits() : renderError()}
+            {renderFruits()}
         </Container>
     )
 }
