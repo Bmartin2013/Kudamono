@@ -1,20 +1,26 @@
 import { Container } from '@material-ui/core';
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import AppBar from '../AppBar';
 
-const Layout = ({ appName, Home, Results }) => {
+const Layout = ({ appName }) => {
+
+    const LazyHome = lazy(() => import('../../pages/Home'));
+    const LazyResults = lazy(() => import('../../pages/Results'));
 
     return (
         <Container>
             <AppBar appName={appName}></AppBar>
-            <Router>
-                <div>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/results" component={Results} />
-                </div>
-            </Router>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={LazyHome} />
+                        <Route path="/results" component={LazyResults} />
+                        <Redirect to="/" />
+                    </Switch>
+                </Router>
+            </Suspense>
         </Container>
     )
 }
