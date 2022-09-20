@@ -24,7 +24,7 @@ The skeleton is organized in multiple components, thus following a neat app stru
 ### Getting started
 
 1. Run `npm install` to download packages
-2. step into the project file and run `npm run start:api` to run the server side
+2. Step into the project file and run `npm run start:api` to run the server side
 3. Then run the `npm run start:dev` to run client side
 
 ### Coming soon
